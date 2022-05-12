@@ -21,10 +21,10 @@ type Proxy interface {
 	LoadConn() int32
 
 	// Weight 获取到当前的weight 负载
-	Weight () int
+	Weight() int
 
 	// Target 获取到目标地址的url
-	Target () string
+	Target() string
 }
 
 type Action struct {

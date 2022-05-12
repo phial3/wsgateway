@@ -1,3 +1,4 @@
-module Sgateway
+module wsgateway
 
 go 1.18
+

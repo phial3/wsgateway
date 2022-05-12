@@ -1,9 +1,10 @@
 package proxy
 
 import (
-	"Sgateway/pkg/errors"
 	"hash/crc32"
 	"math/rand"
+
+	"wsgateway/pkg/errors"
 )
 
 type LoadBalancing int
@@ -121,7 +122,7 @@ func (lb *weightServerLoadBalancer) add(items []Proxy) error {
 			curWeight:    v.Weight(),
 		}
 		lb.proxySet = append(lb.proxySet, node)
-		lb.size ++
+		lb.size++
 	}
 	return nil
 }
@@ -172,8 +173,7 @@ func (lb *urlAddrHashLoadBalancer) hash(target string) int {
 }
 
 // next returns the eligible event-loop by taking the remainder of a hash code as the index of event-loop list.
-func (lb *urlAddrHashLoadBalancer) next(url string)  (Proxy, error) {
+func (lb *urlAddrHashLoadBalancer) next(url string) (Proxy, error) {
 	hashCode := lb.hash(url)
-	return lb.eventLoops[hashCode%lb.size],nil
+	return lb.eventLoops[hashCode%lb.size], nil
 }
-
