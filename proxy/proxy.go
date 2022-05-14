@@ -7,7 +7,6 @@ type Protocol uint8
 const (
 	ProtocolHttp  Protocol = iota + 1 // http
 	protocolHTTPS                     // https
-
 )
 
 type Proxy interface {

@@ -1,7 +1,5 @@
 package proxy
 
-
 type Limit interface {
-	Add (i int32)
-
+	Add(i int32)
 }
