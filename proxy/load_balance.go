@@ -10,7 +10,6 @@ import (
 type LoadBalancing int
 
 const (
-
 	// 轮询
 	Random LoadBalancing = iota
 
